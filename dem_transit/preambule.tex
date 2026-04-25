@@ -1,0 +1,368 @@
+			
+\usepackage[T2A]{fontenc}			
+\usepackage[russian]{babel}			
+\usepackage[utf8x]{inputenc}			
+\usepackage[scaled=0.95]{PTSans}			
+\usepackage{graphicx}			
+%\usepackage[usenames,dvipsnames]{xcolor}			
+\usepackage{algorithm}			
+\usepackage{algorithmic}			
+\usepackage{latexsym,amssymb,amsthm}			
+%предметный указатель
+
+\usepackage{multicol}
+
+\newenvironment{theindex}{}{}
+
+\usepackage[xindy]{imakeidx}
+
+\renewenvironment{theindex}{%
+	
+	
+	
+	\vspace*{-25pt}\begin{center}\color{blue}\Large Предметный указатель\end{center}%
+	
+	
+	
+	\def\item{\par\hangindent 0pt\parindent0pt}%
+	
+	\def\subitem{\par\hangindent10pt\parindent10pt}%
+	
+	\def\subsubitem{\par\hangindent20pt\parindent20pt}%
+	
+	\def\indexspace{}%
+	
+	\begin{multicols}{2}
+		
+	}{\end{multicols} }
+
+
+
+\makeindex[options=-L russian -C utf8]
+
+\AtBeginDocument{%
+	
+	\let\originalindex\index
+	
+	\renewcommand{\index}[1]{\originalindex{\detokenize{#1}}}%
+	
+}
+
+%конец предметного указателя			
+\usepackage{ragged2e}			
+\justifying			
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}			
+\hyphenpenalty=5 			
+\exhyphenpenalty=10000			
+\doublehyphendemerits=2			
+\finalhyphendemerits=500			
+\uchyph=0			
+\renewcommand{\algorithmicrequire}{\textbf{Вход:}}			
+\renewcommand{\algorithmicensure}{\textbf{Выход:}}			
+\renewcommand{\algorithmiccomment}{{\color{gray} //}}			
+%Здесь располагаются все макросы для всякой математики и алгоритмов -			
+%\let\em\it			
+\def\em#1{{\it\color{blue}#1}}
+\def\NB#1{{\bf\color{brown}#1}}
+\def\RS{{\color{red}\bf*}}	
+\def\BS{{\color{blue}\bf*}}		
+%\def\eqed{\tag{\qed}}			
+\def\Boxed#1{#1}			
+\def\odmkey#1#2{{\it\color{red} #1}\index{#2}}			
+\let\emptyset\varnothing			
+\def\Set#1#2{\left\{ #1 \mid #2 \right\}}			
+\let\Equiv\Longleftrightarrow			
+\def\Assign{\operatorname{:=}}			
+\def\Pointer{\operatorname{\uparrow\!}}			
+\def\Is{\operatorname{\colon}}
+\def\plusplus{\operatorname{+\!+}}			
+\def\Def{\stackrel{\text{Def}}{=}}			
+\def\SubsetNE{\varsubsetneq}%\stackrel{\ne}{\subset}}			
+\def\SubsetOne{\stackrel{+1}{\subset}}			
+\def\dDef{\operatorname{::=}}			
+\def\A#1#2{\forall\,#1\ \left(#2\right)}			
+%\def\A#1#2{\forall\,#1\ \linebreak[2]\left(#2\right)}			
+\def\dA#1#2{\forall\,#1\cdots #2}			
+\def\Alg#1#2{\left\langle #1;#2\right\rangle}			
+\def\Bl#1{\mathbf{#1}}			
+\def\hy#1{\left( #1 \right)}			
+\def\DIVC#1#2{\left\langle #1 , #2\right\rangle}
+\def\divC#1#2{\left\langle #1 , #2\right\rangle}			
+\def\DIVI#1#2{#1\in #2}			
+\def\E#1#2{\exists\,#1\ \left(#2\right)}			
+%\def\E#1#2{\exists\,#1\ \linebreak[2]\left(#2\right)}			
+\def\To#1{\stackrel{#1}{\longrightarrow}}			
+\def\ToC#1{\stackrel{#1}{,}}			
+\def\ToS#1{\stackrel{#1}{\sim}}			
+\def\ToE#1{\stackrel{#1}{=}}			
+\def\Tuple#1#2#3{{#1}_{#2},\dots,{#1}_{#3}}			
+\def\dTuple#1#2#3{{#1}_{#2}\dots{#1}_{#3}}			
+\let\Impl\Longrightarrow			
+\let\Impll\Longleftarrow			
+\def\And{\operatorname{\,\&\,}}			
+\def\Or{\,\vee\,}			
+\def\Wedge{\,\wedge\,}			
+\def\BigOr{\bigvee}			
+\def\BigAnd{\bigwedge}			
+\def\nat{\operatorname{\rm nat}}			
+\def\sgn{\operatorname{\rm sgn}}			
+\def\func{\operatorname{\rm func}}			
+\def\ker{\operatorname{\rm ker}}			
+\def\Im{\operatorname{\rm Im}}			
+\def\Dom{\operatorname{\rm Dom}}			
+\def\Ob{\operatorname{\rm Ob}}			
+\def\Mor{\operatorname{\rm Mor}}			
+\def\SetCat{\operatorname{\rm Set}}			
+\def\OrSet{\operatorname{\rm OrSet}}			
+\def\Aut{\operatorname{\rm Aut}}			
+\def\End{\operatorname{\rm End}}			
+\def\Gr{\operatorname{\rm Gr}}			
+\def\Suc{\operatorname{\rm Suc}}			
+\def\card{\operatorname{\rm card}}			
+\def\pr{\operatorname{\rm pr}}			
+\def\MOD{\operatorname{\rm\bf mod}}			
+\def\DIV{\operatorname{\rm\bf div}}			
+\def\Lrf#1{\lfloor #1 \rfloor}			
+\def\lrle#1{\langle #1 \rangle}			
+\def\llrle#1{\langle {\text{#1}} \rangle}			
+\def\Map#1#2#3{{#1}\colon{#2}\nolinebreak\to\nolinebreak{#3}}			
+\def\MapI#1#2#3{{#1}\colon{#2}\in{#3}}			
+\def\Rule#1#2#3{\frac{#1}{#2}\,#3}			
+\def\Seq#1#2#3{#1 \vdash_{#3} #2}			
+\def\Prog#1#2#3{\{#1\}\,#2\,\{#3\}}			
+\def\Not{\neg}			
+\def\demo{\noindent $\triangleright$ \vskip 3 em \par\hfill$\triangleleft$}			
+\DeclareMathOperator{\Eq}{Eq}			
+\DeclareMathOperator{\Unify}{Unify}			
+\DeclareMathOperator{\Antilex}{Antilex}			
+\DeclareMathOperator{\Reverse}{Reverse}			
+\DeclareMathOperator{\Fano}{Fano}			
+\DeclareMathOperator{\Med}{Med}			
+\DeclareMathOperator{\Huffman}{Huffman}			
+\DeclareMathOperator{\Up}{Up}			
+\DeclareMathOperator{\Down}{Down}			
+\DeclareMathOperator{\KCC}{KCC}			
+\DeclareMathOperator{\NewNode}{NewNode}			
+\DeclareMathOperator{\Find}{Find}			
+\DeclareMathOperator{\New}{new}			
+\DeclareMathOperator{\Dispose}{dispose}			
+\DeclareMathOperator{\Delete}{Delete}			
+\DeclareMathOperator{\BT}{BT}			
+\DeclareMathOperator{\Last}{last}			
+\DeclareMathOperator{\Selectmax}{Selectmax}			
+\DeclareMathOperator{\Sort}{Sort}			
+\DeclareMathOperator{\FD}{FD}			
+\DeclareMathOperator{\Length}{Length}			
+\DeclareMathOperator{\Append}{Append}			
+\DeclareMathOperator{\Eval}{Eval}			
+\DeclareMathOperator{\TraverseTree}{TraverseTree}			
+%Списки, etc			
+\def\labelenumi{\theenumi}			
+\def\theenumi{\arabic{enumi}.}			
+\def\labelenumii{\theenumii}			
+\def\theenumii{\arabic{enumii})}			
+\def\p@enumii{\theenumi}			
+\def\labelenumiii{\theenumiii.}			
+\def\theenumiii{\roman{enumiii}}			
+\def\p@enumiii{\theenumi(\theenumii)}			
+\def\labelenumiv{\theenumiv.}			
+\def\theenumiv{\Alph{enumiv}}			
+\def\p@enumiv{\p@enumiii\theenumiii}			
+%нумерация			
+%\numberwithin{equation}{chapter}			
+%\numberwithin{algorithm}{chapter}			
+%\numberwithin{figure}{chapter}			
+%\renewcommand\thesection       {\thechapter.\arabic{section}}			
+%\floatname{algorithm}{Алгоритм}			
+%\renewcommand{\algorithmicrequire}{\textbf{Вход:}}			
+%\renewcommand{\algorithmicensure}{\textbf{Выход:}}			
+\let\cal\mathcal			
+\let\Bbb\mathbb			
+\let\leq\leqslant			
+\let\le\leqslant			
+\let\geq\geqslant			
+\let\ge\geqslant			
+\def\rmb#1{#1 \linebreak #1}			
+\def\rmbb#1{#1 \\ #1}			
+%% М. Лебедев, конец августа 2010			
+\def\sign{\operatorname{\rm sign}}			
+%% from class odm2007			
+%\newtheorem*{theorem}{ТЕОРЕМА}			
+%\newtheorem{vartheorem}{ТЕОРЕМА}			
+%\newtheorem*{corollary}{\begin{corollary}}			
+%\newtheorem{varcorollary}{\begin{corollary}}			
+%\newtheorem*{lemma}{ЛЕММА}			
+%\newtheorem{varlemma}{ЛЕММА}			
+%\newtheorem*{ground}{Обоснование}			
+%\def\endground{\qed\endtrivlist\@endpefalse }			
+%\newtheorem*{example}{Пример}			
+%\def\endexample{\qed\endtrivlist\@endpefalse }			
+\def\clip#1{\bgroup\par\addvspace{7pt plus 3pt minus 3pt}%			
+	\leavevmode\lower 3pt\hbox{\sffamily\bfseries #1} \hrulefill\par\nopagebreak\small} %\hrulefill\par\nopagebreak}			
+\def\endclip{\par\nopagebreak\addvspace{3pt}\hrule width130mm\egroup%			
+	\addvspace{12pt plus 3pt minus 3pt}}			
+\def\remark{\par{\bf \color{brown} Замечание.}}			
+\def\endremark{\par}			
+\def\digress{\begin{small}
+\par{\bf \color{brown} Отступление.}}			
+	\def\enddigress{\end{small}\par}			
+%\def\example{\par\addvspace{9pt plus 1pt minus 3pt}{\sffamily\bfseries Пример}\par\nopagebreak}			
+%\def\endexample{\par\addvspace{9pt plus 1pt minus 3pt}}			
+\def\example{\par{\bf \color{brown} Пример.}}			 
+\def\endexample{\par}			
+\def\examples{\par{\bf \color{brown} Примеры.}}			
+\def\endexamples{\par}			
+\def\prototheorem#1{\par{\bf #1}\bgroup\it}			
+\def\endprototheorem{\par\egroup}			
+\def\theorem{\prototheorem{\color{brown} Теорема.}}			
+\def\endtheorem{\endprototheorem}			
+\def\corollary{\prototheorem{\color{brown} Следствие.}}			
+\def\endcorollary{\endprototheorem}			
+\def\lemma{\prototheorem{\color{brown} Лемма.}}			
+\def\endlemma{\endprototheorem}			
+%\def\proof{\par\addvspace{12pt plus 3pt minus 3pt}{\sffamily\bfseries\small %Д{\scriptsize\uppercase{оказательство}}}\par\nopagebreak}			
+%\def\proof{\par\addvspace{12pt plus 3pt minus 3pt}{\sffamily\bfseries\small %Д{\scriptsize\uppercase{оказательство}}}\quad\nopagebreak}			
+\def\proof{\par{\bf\color{brown} Доказательство.}}			
+\def\endproof{\hfill\qed\par}			
+%\def\proofsection#1{\par{\small $\mathsf{\left[\:\text{{\sf#1}}\:\right]}$}\;}			
+\def\proofsection#1{\par{\color{brown}\sffamily\small  [\;}{\sffamily\small\color{brown} #1}{\sffamily\small\color{brown}\;]}\;}			
+\def\eqed{%			
+	\gdef\tagform@##1{\maketag@@@{\ignorespaces##1\unskip}}%			
+	\tag{\color{brown}\qed}%			
+}			
+\def\ground{\par{\bf\color{brown} Обоснование.}}			
+\def\endground{\hfill\color{brown}\qed\par}			
+% algorithms
+%\newcounter{algorithm}[chapter]
+\def\ext@algorithm{loa}
+\def\fnum@algorithm{\algorithmname\ \thealgorithm}
+\def\algorithmname{Алгоритм}
+\def\thealgorithm{\thechapter.\arabic{algorithm}.}
+
+
+\def\algorithm{%
+	\def\@captionfont{\normalfont\sffamily\small}%
+	\captionindent=-10\fill%
+	\def\caption{\refstepcounter{algorithm}\@dblarg{\@caption{algorithm}}}%
+	\def\@makecaption##1##2{\addvspace{12pt plus 3pt minus 2pt}\normalfont\sffamily\small{\bfseries ##1.} ##2}
+	\small
+}
+\def\endalgorithm{\relax}
+
+
+% citations
+\def\@cite#1#2{{%
+		\m@th\upshape\mdseries[{#1}{\if@tempswa, #2\fi}]}}
+		
+% 	% Стиль презентации			
+% 	\usetheme{default}			
+% 	\setbeamertemplate{navigation symbols}{}			
+% 	\setbeamertemplate{footline}[page number]			
+% 	\setbeamersize{text margin left = 6pt}			
+% 	\setbeamersize{text margin right = 6pt}			
+			
+% %	\usepackage{epstopdf}			
+% 	%\renewcommand{\algorithmiccomment}{ //}			
+% 	\def\Reduce{\stackrel{*}{\leadsto}}			
+% 	\DeclareMathOperator{\Clear}{Clear}			
+% 	\DeclareMathOperator{\Conf}{Conf}			
+% 	\DeclareMathOperator{\lcm}{lcm}			
+% 	\def\Mod#1#2#3{#1\equiv #2 \,\left(\bmod\,#3\right)}			
+% 	%\newtheorem{theorem}{ТЕОРЕМА}			
+% %	\def\digress{\par{\bf Отступление.}}			
+% %	\def\enddigress{\par}			
+			
+% 	\renewcommand{\algorithmiccomment}{ //}			
+% 	\DeclareMathOperator{\GI}{Grey2Int}			
+			
+% 	\setbeamertemplate{frametitle continuation}{}			
+% 	\def\TT{\text{T}}			
+% 	\def\FF{\text{F}}			
+% 	\DeclareMathOperator{\firstNeqSubTerms}{firstNeqSubTerms}			
+				
+% 	\DeclareMathOperator{\Partition}{Partition}			
+% 	\DeclareMathOperator{\Quicksort}{Quicksort}			
+			
+% 	\DeclareMathOperator{\ChangeArray}{ChangeArray}			
+% 	%\newtheorem{corollary}{\begin{corollary}}			
+			
+% 	\def\divI#1#2{#1 \in #2}			
+% 	\DeclareMathOperator{\Ordering}{Ordering}			
+% 	\setbeamertemplate{frametitle}			
+% 	{\color{blue}\large\insertframetitle\par\vskip-6pt}			
+	%%вставка для оглавления со страницами			
+	%\makeatletter			
+	%\long\def\beamer@section[#1]#2{%			
+	%	\beamer@savemode%		
+	%	\mode<all>%		
+	%	\ifbeamer@inlecture		
+	%	\refstepcounter{section}%		
+	%	\beamer@ifempty{#2}%		
+	%	{\long\def\secname{#1}\long\def\lastsection{#1}}%		
+	%	{\global\advance\beamer@tocsectionnumber by 1\relax%		
+	%		\long\def\secname{#2}%	
+	%		\long\def\lastsection{#1}%	
+	%		\addtocontents{toc}{\protect\beamer@sectionintoc{\the\c@section}{#2\hfill\the\c@page}{\the\c@page}{\the\c@part}%	
+	%			{\the\beamer@tocsectionnumber}}}%
+	%	{\let\\=\relax\xdef\sectionlink{{Navigation\the\c@page}{\noexpand\secname}}}%		
+	%	\beamer@tempcount=\c@page\advance\beamer@tempcount by -1%		
+	%	\beamer@ifempty{#1}{}{%		
+	%		\addtocontents{nav}{\protect\headcommand{\protect\sectionentry{\the\c@section}{#1}{\the\c@page}{\secname}{\the\c@part}}}%	
+	%		\addtocontents{nav}{\protect\headcommand{\protect\beamer@sectionpages{\the\beamer@sectionstartpage}{\the\beamer@tempcount}}}%	
+	%		\addtocontents{nav}{\protect\headcommand{\protect\beamer@subsectionpages{\the\beamer@subsectionstartpage}{\the\beamer@tempcount}}}%	
+	%	}%		
+	%	\beamer@sectionstartpage=\c@page%		
+	%	\beamer@subsectionstartpage=\c@page%		
+	%	\def\insertsection{\expandafter\hyperlink\sectionlink}%		
+	%	\def\insertsubsection{}%		
+	%	\def\insertsubsubsection{}%		
+	%	\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}%		
+	%	\def\insertsubsectionhead{}%		
+	%	\def\insertsubsubsectionhead{}%		
+	%	\def\lastsubsection{}%		
+	%	\Hy@writebookmark{\the\c@section}{\secname}{Outline\the\c@part.\the\c@section}{2}{toc}%		
+	%	\hyper@anchorstart{Outline\the\c@part.\the\c@section}\hyper@anchorend%		
+	%	\beamer@ifempty{#2}{\beamer@atbeginsections}{\beamer@atbeginsection}%		
+	%	\fi%		
+	%	\beamer@resumemode}%		
+	%			
+	%\def\beamer@subsection[#1]#2{%			
+	%	\ifbeamer@inlecture%		
+	%	\refstepcounter{subsection}%		
+	%	\beamer@ifempty{#2}{\long\def\subsecname{#1}\long\def\lastsubsection{#1}}		
+	%	{%		
+	%		\long\def\subsecname{#2}%	
+	%		\long\def\lastsubsection{#1}%	
+	%		\addtocontents{toc}{\protect\beamer@subsectionintoc{\the\c@section}{\the\c@subsection}{#2\hfill\the\c@page}{\the\c@page}{\the\c@part}{\the\beamer@tocsectionnumber}}%	
+	%	\addtocontents{nav}{%		
+	%		\protect\headcommand{\protect\beamer@subsectionentry{\the\c@part}{\the\c@section}{\the\c@subsection}{\the\c@page}{\lastsubsection}}%	
+	%		\protect\headcommand{\protect\beamer@subsectionpages{\the\beamer@subsectionstartpage}{\the\beamer@tempcount}}%	
+	%	\edef\subsectionlink{{Navigation\the\c@page}{\noexpand\subsecname}}%		
+	%	\def\insertsubsection{\expandafter\hyperlink\subsectionlink}%		
+	%	\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}%		
+	%	\Hy@writebookmark{\the\c@subsection}{#2}{Outline\the\c@part.\the\c@section.\the\c@subsection.\the\c@page}{3}{toc}%		
+	%	\hyper@anchorstart{Outline\the\c@part.\the\c@section.\the\c@subsection.\the\c@page}\hyper@anchorend%		
+	%	\beamer@ifempty{#2}{\beamer@atbeginsubsections}{\beamer@atbeginsubsection}%		
+	%	\beamer@resumemode}		
+	%\makeatother			
+	%%конец вставки для оглавления			
+			
+	\def\Path#1#2{\langle {\stackrel{\rightarrow}{#1 , #2}}\rangle}			
+	\DeclareMathOperator{\Init}{Init}			
+	\DeclareMathOperator{\Relax}{Relax}			
+	\DeclareMathOperator{\ExtractMin}{ExtractMin}			
+	\DeclareMathOperator{\Aug}{Aug}			
+%	{\color{blue}\large\insertframetitle\par\vskip-8pt}			
+			
+	\renewcommand{\algorithmicelsif}			
+	{\algorithmicelse\algorithmicif}			
+	\DeclareMathOperator{\Build}{Build}			
+	\DeclareMathOperator{\Modify}{Modify}			
+	\DeclareMathOperator{\Heapify}{Heapify}			
+	\DeclareMathOperator{\MakeHeap}{MakeHeap}			
+	\DeclareMathOperator{\IncElt}{IncElt}			
+		
+		
+\def\DMref#1#2{\raisebox{0pt}{\color{blue}\underline{\hyperlink{#2}{#1}}}}		
+			
+\def\TODO#1{{\color{gray} TODO {#1}}}
